@@ -17,7 +17,7 @@
             "polyfills": [
               "zone.js"
             ],
-            "outputPath": "docs",
+            "outputPath": "dist/hotel-condado-pisco",
             "baseHref": "./",
             "tsConfig": "tsconfig.app.json",
             "assets": [
