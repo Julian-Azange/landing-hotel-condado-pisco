@@ -1,0 +1,222 @@
+<section id="habitaciones" class="py-24 bg-gradient-to-br from-dark-elegant via-dark-soft to-dark-medium relative overflow-hidden">
+    <!-- Elementos decorativos de fondo elegantes -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-0 w-72 h-72 bg-gold-primary/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-0 w-96 h-96 bg-gold-accent/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <!-- Header de la sección elegante -->
+        <div class="text-center mb-16 fade-in">
+            <div class="inline-flex items-center px-4 py-2 rounded-full bg-dark-elegant/20 backdrop-blur-sm border border-gold-primary/20 mb-6">
+                <svg class="w-5 h-5 mr-2 text-gold-primary" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+                </svg>
+                <span class="text-sm font-medium text-gold-primary">Habitaciones de lujo</span>
+            </div>
+            
+            <h2 class="text-4xl md:text-6xl font-display font-bold text-text-primary mb-6">
+                <span class="bg-gradient-to-r from-gold-primary via-gold-accent to-gold-primary bg-clip-text text-transparent">Habitaciones</span> de Ensueño
+            </h2>
+            <p class="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+                Cada habitación está diseñada para ofrecerte la máxima comodidad y elegancia, 
+                con vistas espectaculares y amenidades de primera clase.
+            </p>
+        </div>
+
+        <!-- Filtros de habitaciones -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12 fade-in">
+            <button 
+                *ngFor="let filter of ['all', 'single', 'couple', 'family', 'suite']"
+                (click)="filterRooms(filter)"
+                [class]="selectedFilter === filter 
+                    ? 'px-6 py-3 rounded-full bg-gradient-to-r from-gold-primary to-gold-accent text-dark-elegant font-semibold shadow-modern transition-all duration-300' 
+                    : 'px-6 py-3 rounded-full bg-dark-elegant/20 backdrop-blur-sm border border-gold-primary/30 text-gold-primary font-semibold hover:bg-gold-primary/10 hover:border-gold-primary/50 transition-all duration-300'">
+                {{ getFilterLabel(filter) }}
+            </button>
+        </div>
+
+        <!-- Grid de habitaciones dinámico -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div *ngFor="let room of filteredRooms" class="group bg-dark-elegant/40 backdrop-blur-sm rounded-2xl shadow-modern hover:shadow-modern-lg transition-all duration-500 overflow-hidden hover-lift border border-gold-primary/20">
+                <div class="relative overflow-hidden">
+                    <img [src]="room.image" 
+                         [alt]="room.name" 
+                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-elegant/80 to-transparent"></div>
+                    
+                    <!-- Badges -->
+                    <div class="absolute top-4 right-4 flex flex-col gap-2">
+                        <span *ngIf="room.popular" class="px-3 py-1 bg-gradient-to-r from-gold-primary to-gold-accent text-dark-elegant rounded-full text-sm font-semibold">
+                            Más Popular
+                        </span>
+                        <span *ngIf="room.premium" class="px-3 py-1 bg-gradient-to-r from-bronze to-copper text-white rounded-full text-sm font-semibold">
+                            Premium
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="p-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-display font-bold text-text-primary">{{ room.name }}</h3>
+                        <div class="flex items-center space-x-1">
+                            <svg class="w-5 h-5 text-gold-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <span class="text-sm font-medium text-text-secondary">{{ room.rating }}</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-text-secondary mb-6 leading-relaxed">
+                        {{ room.description }}
+                    </p>
+                    
+                    <div class="flex items-center space-x-4 mb-6 text-sm text-text-secondary">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-gold-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>{{ room.size }}</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-gold-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>{{ room.capacity }} personas</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <span class="text-3xl font-bold text-gold-primary">${{ room.price }}</span>
+                            <span class="text-text-secondary">/noche</span>
+                        </div>
+                        <div class="text-sm text-green-400 font-semibold">
+                            {{ room.available ? 'Disponible' : 'No disponible' }}
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-3">
+                        <button 
+                            (click)="showRoomDetails(room)"
+                            class="flex-1 bg-dark-elegant/20 backdrop-blur-sm border border-gold-primary/30 text-gold-primary font-semibold py-3 px-6 rounded-xl hover:bg-gold-primary/10 hover:border-gold-primary/50 transition-all duration-300">
+                            Ver Detalles
+                        </button>
+                        <button 
+                            (click)="openWhatsApp(room)"
+                            class="flex-1 bg-gradient-to-r from-gold-primary to-gold-accent text-dark-elegant font-semibold py-3 px-6 rounded-xl hover:shadow-modern transition-all duration-300 transform hover:scale-105">
+                            Reservar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to action elegante -->
+        <div class="text-center mt-16 fade-in">
+            <div class="bg-dark-elegant/20 backdrop-blur-sm rounded-2xl p-8 border border-gold-primary/20 shadow-modern">
+                <h3 class="text-2xl font-display font-bold text-text-primary mb-4">
+                    ¿No encuentras lo que buscas?
+                </h3>
+                <p class="text-text-secondary mb-6">
+                    Contáctanos para conocer todas nuestras opciones disponibles y encontrar la habitación perfecta para ti.
+                </p>
+                <a href="#contacto" 
+                   class="inline-flex items-center space-x-2 bg-gradient-to-r from-gold-primary to-gold-accent text-dark-elegant font-semibold py-3 px-8 rounded-full hover:shadow-modern transition-all duration-300 transform hover:scale-105">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                    </svg>
+                    <span>Contactar Ahora</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de detalles de habitación -->
+    <div *ngIf="showDetails && selectedRoom" 
+         class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+         (click)="closeDetails()">
+        <div class="bg-dark-elegant/95 backdrop-blur-xl rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-gold-primary/20 shadow-modern"
+             (click)="$event.stopPropagation()">
+            <!-- Header del modal -->
+            <div class="relative p-6 border-b border-gold-primary/20">
+                <button (click)="closeDetails()" 
+                        class="absolute top-4 right-4 p-2 rounded-full bg-dark-elegant/50 text-gold-primary hover:bg-gold-primary/10 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                <h2 class="text-3xl font-display font-bold text-text-primary mb-2">{{ selectedRoom.name }}</h2>
+                <p class="text-gold-primary text-lg">${{ selectedRoom.price }} / noche</p>
+            </div>
+
+            <!-- Contenido del modal -->
+            <div class="p-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Imagen -->
+                    <div class="relative">
+                        <img [src]="selectedRoom.image" 
+                             [alt]="selectedRoom.name" 
+                             class="w-full h-80 object-cover rounded-xl">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-elegant/50 to-transparent rounded-xl"></div>
+                    </div>
+
+                    <!-- Información -->
+                    <div class="space-y-6">
+                        <!-- Descripción -->
+                        <div>
+                            <h3 class="text-xl font-semibold text-gold-primary mb-3">Descripción</h3>
+                            <p class="text-text-secondary leading-relaxed">{{ selectedRoom.description }}</p>
+                        </div>
+
+                        <!-- Detalles -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-dark-elegant/30 rounded-lg p-4">
+                                <div class="text-gold-primary font-semibold mb-1">Tamaño</div>
+                                <div class="text-text-secondary">{{ selectedRoom.size }}</div>
+                            </div>
+                            <div class="bg-dark-elegant/30 rounded-lg p-4">
+                                <div class="text-gold-primary font-semibold mb-1">Capacidad</div>
+                                <div class="text-text-secondary">{{ selectedRoom.capacity }} personas</div>
+                            </div>
+                            <div class="bg-dark-elegant/30 rounded-lg p-4">
+                                <div class="text-gold-primary font-semibold mb-1">Check-in</div>
+                                <div class="text-text-secondary">{{ selectedRoom.checkIn }}</div>
+                            </div>
+                            <div class="bg-dark-elegant/30 rounded-lg p-4">
+                                <div class="text-gold-primary font-semibold mb-1">Check-out</div>
+                                <div class="text-text-secondary">{{ selectedRoom.checkOut }}</div>
+                            </div>
+                        </div>
+
+                        <!-- Amenidades -->
+                        <div>
+                            <h3 class="text-xl font-semibold text-gold-primary mb-3">Amenidades</h3>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div *ngFor="let amenity of selectedRoom.amenities" 
+                                     class="flex items-center space-x-2 text-text-secondary">
+                                    <svg class="w-4 h-4 text-gold-primary" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>{{ amenity }}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botones de acción -->
+                        <div class="flex gap-4 pt-4">
+                            <button (click)="openWhatsApp(selectedRoom)"
+                                    class="flex-1 bg-gradient-to-r from-gold-primary to-gold-accent text-dark-elegant font-semibold py-3 px-6 rounded-xl hover:shadow-modern transition-all duration-300 transform hover:scale-105">
+                                Reservar por WhatsApp
+                            </button>
+                            <button (click)="closeDetails()"
+                                    class="px-6 py-3 border border-gold-primary/30 text-gold-primary font-semibold rounded-xl hover:bg-gold-primary/10 transition-all duration-300">
+                                Cerrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
