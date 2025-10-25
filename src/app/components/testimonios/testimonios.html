@@ -15,10 +15,10 @@
                 <span class="text-sm font-medium text-gold-primary">Testimonios</span>
             </div>
             
-            <h2 class="text-4xl md:text-6xl font-display font-bold text-text-primary mb-6">
+            <h2 class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-display font-bold text-text-primary mb-6 text-wrap-mobile">
                 <span class="bg-gradient-to-r from-gold-primary via-gold-accent to-gold-primary bg-clip-text text-transparent">Lo que dicen</span> nuestros huéspedes
             </h2>
-            <p class="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+            <p class="text-base xs:text-lg sm:text-xl md:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed text-wrap-mobile px-4">
                 Experiencias auténticas de nuestros huéspedes que nos llenan de orgullo y nos motivan a seguir superando expectativas.
             </p>
         </div>
@@ -26,10 +26,10 @@
         <!-- Carousel de testimonios -->
         <div class="relative max-w-6xl mx-auto">
             <!-- Testimonial principal -->
-            <div class="relative bg-dark-elegant/40 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-gold-primary/20 shadow-modern overflow-hidden">
+            <div class="relative bg-dark-elegant/40 backdrop-blur-sm rounded-3xl p-6 sm:p-8 md:p-12 border border-gold-primary/20 shadow-modern overflow-hidden mx-4 sm:mx-0">
                 <!-- Quote icon -->
-                <div class="absolute top-8 right-8 text-gold-primary/20">
-                    <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 20 20">
+                <div class="absolute top-4 right-4 sm:top-8 sm:right-8 text-gold-primary/20">
+                    <svg class="w-12 h-12 sm:w-16 sm:h-16" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V8a1 1 0 112 0v2.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                     </svg>
                 </div>
@@ -46,19 +46,19 @@
                     </div>
 
                     <!-- Testimonial text -->
-                    <blockquote class="text-xl md:text-2xl text-text-primary text-center leading-relaxed mb-8 font-light">
+                    <blockquote class="text-base sm:text-lg md:text-xl lg:text-2xl text-text-primary text-center leading-relaxed mb-6 sm:mb-8 font-light text-wrap-mobile">
                         "{{ testimonials[currentIndex].text }}"
                     </blockquote>
 
                     <!-- Author info -->
-                    <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6">
-                        <div class="flex items-center space-x-4">
+                    <div class="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 md:space-x-6">
+                        <div class="flex items-center space-x-3 sm:space-x-4">
                             <img [src]="testimonials[currentIndex].avatar" 
                                  [alt]="testimonials[currentIndex].name"
-                                 class="w-16 h-16 rounded-full object-cover border-2 border-gold-primary/30">
-                            <div class="text-center md:text-left">
-                                <h4 class="text-lg font-semibold text-text-primary">{{ testimonials[currentIndex].name }}</h4>
-                                <p class="text-gold-primary text-sm">{{ testimonials[currentIndex].location }}</p>
+                                 class="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-gold-primary/30">
+                            <div class="text-center sm:text-left">
+                                <h4 class="text-base sm:text-lg font-semibold text-text-primary text-wrap-mobile">{{ testimonials[currentIndex].name }}</h4>
+                                <p class="text-gold-primary text-xs sm:text-sm">{{ testimonials[currentIndex].location }}</p>
                                 <p class="text-text-secondary text-xs">{{ testimonials[currentIndex].roomType }} • {{ testimonials[currentIndex].stayDate }}</p>
                             </div>
                         </div>
@@ -67,15 +67,15 @@
 
                 <!-- Navigation arrows -->
                 <button (click)="prevTestimonial()" 
-                        class="absolute left-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-dark-elegant/50 backdrop-blur-sm text-gold-primary hover:bg-gold-primary/10 transition-all duration-300">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 p-2 sm:p-3 rounded-full bg-dark-elegant/50 backdrop-blur-sm text-gold-primary hover:bg-gold-primary/10 transition-all duration-300">
+                    <svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
                 </button>
 
                 <button (click)="nextTestimonial()" 
-                        class="absolute right-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-dark-elegant/50 backdrop-blur-sm text-gold-primary hover:bg-gold-primary/10 transition-all duration-300">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 p-2 sm:p-3 rounded-full bg-dark-elegant/50 backdrop-blur-sm text-gold-primary hover:bg-gold-primary/10 transition-all duration-300">
+                    <svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                 </button>
@@ -93,18 +93,18 @@
         </div>
 
         <!-- Estadísticas de satisfacción -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 fade-in">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-16 sm:mt-20 fade-in">
             <div class="text-center">
-                <div class="text-4xl md:text-5xl font-bold text-gold-primary mb-2">4.9/5</div>
-                <div class="text-text-secondary">Calificación promedio</div>
+                <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-gold-primary mb-2">4.9/5</div>
+                <div class="text-sm sm:text-base text-text-secondary">Calificación promedio</div>
             </div>
             <div class="text-center">
-                <div class="text-4xl md:text-5xl font-bold text-gold-accent mb-2">98%</div>
-                <div class="text-text-secondary">Huéspedes satisfechos</div>
+                <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-gold-accent mb-2">98%</div>
+                <div class="text-sm sm:text-base text-text-secondary">Huéspedes satisfechos</div>
             </div>
             <div class="text-center">
-                <div class="text-4xl md:text-5xl font-bold text-gold-primary mb-2">500+</div>
-                <div class="text-text-secondary">Reseñas verificadas</div>
+                <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-gold-primary mb-2">500+</div>
+                <div class="text-sm sm:text-base text-text-secondary">Reseñas verificadas</div>
             </div>
         </div>
     </div>

@@ -1,0 +1,165 @@
+/* Estilos responsivos para la sección de servicios */
+
+/* Estilos base */
+.servicios-section {
+    overflow-x: hidden;
+}
+
+/* Títulos responsivos */
+.servicios-title {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Grid de servicios responsivo */
+.servicios-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+/* Servicios adicionales responsivo */
+.servicios-adicionales {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Call to action responsivo */
+.cta-servicios {
+    padding: 1.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Breakpoints específicos para móvil */
+@media (max-width: 640px) {
+    .servicios-section {
+        padding: 3rem 0;
+    }
+
+    .servicios-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    .servicios-subtitle {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+    }
+
+    .servicios-grid {
+        gap: 1.5rem;
+    }
+
+    .servicio-item {
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .servicio-icon {
+        width: 4rem;
+        height: 4rem;
+        margin: 0 auto 1rem;
+    }
+
+    .servicio-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .servicio-description {
+        font-size: 0.875rem;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+    }
+
+    .servicios-adicionales {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .servicio-adicional {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .cta-servicios {
+        padding: 1rem;
+    }
+
+    .cta-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .cta-description {
+        font-size: 0.875rem;
+        line-height: 1.4;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-buttons {
+        gap: 0.75rem;
+    }
+
+    .cta-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Breakpoints para tablet */
+@media (min-width: 641px) and (max-width: 768px) {
+    .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .servicios-adicionales {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+/* Breakpoints para desktop */
+@media (min-width: 769px) {
+    .servicios-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .servicios-adicionales {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+
+    .servicio-item,
+    .servicio-adicional,
+    .cta-button {
+        transition: none;
+    }
+}
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+    .servicio-item {
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}

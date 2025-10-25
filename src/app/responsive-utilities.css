@@ -1,0 +1,395 @@
+/* Utilidades responsivas adicionales para móvil */
+
+/* Contenedores responsivos */
+.container-responsive {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+    .container-responsive {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .container-responsive {
+        padding: 0 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container-responsive {
+        max-width: 1200px;
+        padding: 0 2rem;
+    }
+}
+
+/* Texto responsivo con breakpoints específicos */
+.text-responsive {
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+@media (min-width: 640px) {
+    .text-responsive {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+@media (min-width: 768px) {
+    .text-responsive {
+        font-size: 1.125rem;
+        line-height: 1.6;
+    }
+}
+
+@media (min-width: 1024px) {
+    .text-responsive {
+        font-size: 1.25rem;
+        line-height: 1.5;
+    }
+}
+
+/* Títulos responsivos */
+.title-responsive {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+@media (min-width: 640px) {
+    .title-responsive {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+}
+
+@media (min-width: 768px) {
+    .title-responsive {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .title-responsive {
+        font-size: 3rem;
+        line-height: 1.1;
+    }
+}
+
+/* Grid responsivo */
+.grid-responsive {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+    .grid-responsive {
+        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .grid-responsive {
+        gap: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-responsive {
+        gap: 2.5rem;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Flexbox responsivo */
+.flex-responsive {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .flex-responsive {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+}
+
+/* Espaciado responsivo */
+.spacing-responsive {
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+@media (min-width: 640px) {
+    .spacing-responsive {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .spacing-responsive {
+        padding: 2rem;
+        margin: 2rem 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .spacing-responsive {
+        padding: 3rem;
+        margin: 3rem 0;
+    }
+}
+
+/* Botones responsivos */
+.btn-responsive {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 640px) {
+    .btn-responsive {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        border-radius: 0.75rem;
+    }
+}
+
+/* Imágenes responsivas */
+.img-responsive {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+@media (min-width: 640px) {
+    .img-responsive {
+        border-radius: 0.75rem;
+    }
+}
+
+/* Cards responsivos */
+.card-responsive {
+    background: rgba(15, 15, 15, 0.4);
+    backdrop-filter: blur(20px);
+    border-radius: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+@media (min-width: 640px) {
+    .card-responsive {
+        padding: 1.5rem;
+        border-radius: 1.25rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .card-responsive {
+        padding: 2rem;
+        border-radius: 1.5rem;
+    }
+}
+
+/* Formularios responsivos */
+.form-responsive {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .form-responsive {
+        gap: 1.5rem;
+    }
+}
+
+.form-group-responsive {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+    .form-group-responsive {
+        gap: 0.75rem;
+    }
+}
+
+/* Navegación responsiva */
+.nav-responsive {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+    .nav-responsive {
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
+
+/* Modal responsivo */
+.modal-responsive {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content-responsive {
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 1rem;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: 100%;
+    overflow-y: auto;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+@media (min-width: 640px) {
+    .modal-content-responsive {
+        max-width: 80vw;
+        border-radius: 1.25rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .modal-content-responsive {
+        max-width: 70vw;
+        border-radius: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .modal-content-responsive {
+        max-width: 60vw;
+    }
+}
+
+/* Utilidades de texto específicas para móvil */
+.text-wrap-mobile {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.text-center-mobile {
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .text-center-mobile {
+        text-align: left;
+    }
+}
+
+/* Utilidades de visibilidad responsiva */
+.hidden-mobile {
+    display: none;
+}
+
+@media (min-width: 640px) {
+    .hidden-mobile {
+        display: block;
+    }
+}
+
+.visible-mobile {
+    display: block;
+}
+
+@media (min-width: 640px) {
+    .visible-mobile {
+        display: none;
+    }
+}
+
+/* Utilidades de overflow responsivo */
+.overflow-mobile-hidden {
+    overflow: hidden;
+}
+
+.overflow-mobile-x-hidden {
+    overflow-x: hidden;
+}
+
+.overflow-mobile-y-auto {
+    overflow-y: auto;
+}
+
+/* Utilidades de posición responsiva */
+.relative-mobile {
+    position: relative;
+}
+
+.absolute-mobile {
+    position: absolute;
+}
+
+.fixed-mobile {
+    position: fixed;
+}
+
+/* Utilidades de z-index responsivo */
+.z-mobile-10 {
+    z-index: 10;
+}
+
+.z-mobile-20 {
+    z-index: 20;
+}
+
+.z-mobile-30 {
+    z-index: 30;
+}
+
+.z-mobile-40 {
+    z-index: 40;
+}
+
+.z-mobile-50 {
+    z-index: 50;
+}
+
+/* Mejoras de accesibilidad responsiva */
+@media (prefers-reduced-motion: reduce) {
+
+    .btn-responsive,
+    .card-responsive,
+    .img-responsive {
+        transition: none;
+    }
+}
+
+/* Modo oscuro responsivo */
+@media (prefers-color-scheme: dark) {
+    .card-responsive {
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .modal-content-responsive {
+        background: rgba(0, 0, 0, 0.95);
+    }
+}

@@ -15,34 +15,34 @@
                 <span class="text-sm font-medium text-gold-primary">Habitaciones de lujo</span>
             </div>
             
-            <h2 class="text-4xl md:text-6xl font-display font-bold text-text-primary mb-6">
+            <h2 class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-display font-bold text-text-primary mb-6 text-wrap-mobile">
                 <span class="bg-gradient-to-r from-gold-primary via-gold-accent to-gold-primary bg-clip-text text-transparent">Habitaciones</span> de Ensueño
             </h2>
-            <p class="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+            <p class="text-base xs:text-lg sm:text-xl md:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed text-wrap-mobile px-4">
                 Cada habitación está diseñada para ofrecerte la máxima comodidad y elegancia, 
                 con vistas espectaculares y amenidades de primera clase.
             </p>
         </div>
 
         <!-- Filtros de habitaciones -->
-        <div class="flex flex-wrap justify-center gap-4 mb-12 fade-in">
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 fade-in px-4">
             <button 
                 *ngFor="let filter of ['all', 'single', 'couple', 'family', 'suite']"
                 (click)="filterRooms(filter)"
                 [class]="selectedFilter === filter 
-                    ? 'px-6 py-3 rounded-full bg-gradient-to-r from-gold-primary to-gold-accent text-dark-elegant font-semibold shadow-modern transition-all duration-300' 
-                    : 'px-6 py-3 rounded-full bg-dark-elegant/20 backdrop-blur-sm border border-gold-primary/30 text-gold-primary font-semibold hover:bg-gold-primary/10 hover:border-gold-primary/50 transition-all duration-300'">
+                    ? 'px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-gold-primary to-gold-accent text-dark-elegant font-semibold shadow-modern transition-all duration-300 text-sm sm:text-base' 
+                    : 'px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-dark-elegant/20 backdrop-blur-sm border border-gold-primary/30 text-gold-primary font-semibold hover:bg-gold-primary/10 hover:border-gold-primary/50 transition-all duration-300 text-sm sm:text-base'">
                 {{ getFilterLabel(filter) }}
             </button>
         </div>
 
         <!-- Grid de habitaciones dinámico -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <div *ngFor="let room of filteredRooms" class="group bg-dark-elegant/40 backdrop-blur-sm rounded-2xl shadow-modern hover:shadow-modern-lg transition-all duration-500 overflow-hidden hover-lift border border-gold-primary/20">
                 <div class="relative overflow-hidden">
                     <img [src]="room.image" 
                          [alt]="room.name" 
-                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
+                         class="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark-elegant/80 to-transparent"></div>
                     
                     <!-- Badges -->
@@ -56,9 +56,9 @@
                     </div>
                 </div>
                 
-                <div class="p-8">
+                <div class="p-4 sm:p-6 lg:p-8">
                     <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-2xl font-display font-bold text-text-primary">{{ room.name }}</h3>
+                        <h3 class="text-lg sm:text-xl lg:text-2xl font-display font-bold text-text-primary text-wrap-mobile">{{ room.name }}</h3>
                         <div class="flex items-center space-x-1">
                             <svg class="w-5 h-5 text-gold-accent" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
@@ -67,11 +67,11 @@
                         </div>
                     </div>
                     
-                    <p class="text-text-secondary mb-6 leading-relaxed">
+                    <p class="text-text-secondary mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base text-wrap-mobile">
                         {{ room.description }}
                     </p>
                     
-                    <div class="flex items-center space-x-4 mb-6 text-sm text-text-secondary">
+                    <div class="flex items-center space-x-2 sm:space-x-4 mb-4 sm:mb-6 text-xs sm:text-sm text-text-secondary flex-wrap">
                         <div class="flex items-center space-x-2">
                             <svg class="w-4 h-4 text-gold-primary" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
@@ -86,25 +86,25 @@
                         </div>
                     </div>
                     
-                    <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center justify-between mb-4 sm:mb-6">
                         <div>
-                            <span class="text-3xl font-bold text-gold-primary">${{ room.price }}</span>
-                            <span class="text-text-secondary">/noche</span>
+                            <span class="text-2xl sm:text-3xl font-bold text-gold-primary">${{ room.price }}</span>
+                            <span class="text-text-secondary text-sm sm:text-base">/noche</span>
                         </div>
-                        <div class="text-sm text-green-400 font-semibold">
+                        <div class="text-xs sm:text-sm text-green-400 font-semibold">
                             {{ room.available ? 'Disponible' : 'No disponible' }}
                         </div>
                     </div>
                     
-                    <div class="flex gap-3">
+                    <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
                         <button 
                             (click)="showRoomDetails(room)"
-                            class="flex-1 bg-dark-elegant/20 backdrop-blur-sm border border-gold-primary/30 text-gold-primary font-semibold py-3 px-6 rounded-xl hover:bg-gold-primary/10 hover:border-gold-primary/50 transition-all duration-300">
+                            class="flex-1 bg-dark-elegant/20 backdrop-blur-sm border border-gold-primary/30 text-gold-primary font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-xl hover:bg-gold-primary/10 hover:border-gold-primary/50 transition-all duration-300 text-sm sm:text-base">
                             Ver Detalles
                         </button>
                         <button 
                             (click)="openWhatsApp(room)"
-                            class="flex-1 bg-gradient-to-r from-gold-primary to-gold-accent text-dark-elegant font-semibold py-3 px-6 rounded-xl hover:shadow-modern transition-all duration-300 transform hover:scale-105">
+                            class="flex-1 bg-gradient-to-r from-gold-primary to-gold-accent text-dark-elegant font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-xl hover:shadow-modern transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
                             Reservar
                         </button>
                     </div>
